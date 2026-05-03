@@ -9,6 +9,7 @@ on:
 jobs:
   sync-to-huggingface:
     runs-on: ubuntu-latest
+    if: ${{ vars.ENABLE_HF_SYNC == 'true' }}
 
     steps:
       - name: Checkout repository
@@ -16,6 +17,14 @@ jobs:
         with:
           fetch-depth: 0
           lfs: true
+
+      - name: Prepare Hugging Face README
+        run: |
+          cp README.hf.md README.md
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add README.md
+          git commit -m "准备 Hugging Face Space 元数据" --allow-empty
 
       - name: Push to Hugging Face Space
         env:
