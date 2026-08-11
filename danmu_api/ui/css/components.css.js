@@ -190,9 +190,10 @@ body[data-theme] .favorite-action-btn:disabled:hover {
 }
 
 .favorite-cover {
-    width: 58px;
-    height: 78px;
+    width: 78px;
+    height: auto;
     flex: 0 0 auto;
+    align-self: stretch;
     border-radius: 6px;
     object-fit: cover;
     background: #e5e7eb;
@@ -200,9 +201,16 @@ body[data-theme] .favorite-action-btn:disabled:hover {
 
 .favorite-info-row {
     display: flex;
-    align-items: center;
+    align-items: stretch;
     gap: 12px;
     min-width: 0;
+}
+
+.favorite-copy {
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .favorite-meta {
@@ -1824,6 +1832,25 @@ body.modal-open {
 
 .danmu-filter-tabs::-webkit-scrollbar { display: none; }
 
+.danmu-list-tools {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.danmu-search {
+    flex: 1 1 260px;
+    min-width: 0;
+    max-width: 420px;
+}
+
+.danmu-search-status {
+    color: var(--theme-muted);
+    font-size: 12px;
+    white-space: nowrap;
+}
+
 .danmu-filter-tab {
     flex: 0 0 auto;
     display: inline-flex;
@@ -2026,6 +2053,109 @@ body.modal-open {
     display: flex;
     gap: 6px;
     margin-left: auto;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+}
+
+.danmu-export-select {
+    background-color: var(--theme-panel-strong);
+    color: var(--theme-text);
+    border: 1px solid var(--theme-border);
+    border-radius: var(--app-radius-btn);
+    padding: 5px 12px;
+    font-size: 12px;
+    line-height: 1.4;
+    max-width: 220px;
+    cursor: pointer;
+}
+
+.danmu-export-select:hover {
+    border-color: var(--theme-accent);
+}
+
+.danmu-export-select:focus-visible {
+    outline: 2px solid var(--theme-accent);
+    outline-offset: 2px;
+}
+
+.danmu-source-url {
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr) auto;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 14px;
+    padding: 9px 10px;
+    border: 1px solid var(--theme-border);
+    border-radius: var(--app-radius-card-sm);
+    background: var(--theme-panel-bg);
+}
+
+.danmu-source-url-label {
+    color: var(--theme-muted);
+    font-size: 12px;
+    white-space: nowrap;
+}
+
+.danmu-source-url-value {
+    min-width: 0;
+    overflow: hidden;
+    color: var(--theme-text);
+    font-family: ui-monospace, SFMono-Regular, Consolas, monospace;
+    font-size: 12px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    user-select: text;
+}
+
+.danmu-source-url-actions {
+    display: flex;
+    gap: 6px;
+}
+
+.danmu-source-url-actions .btn {
+    flex: 0 0 auto;
+    white-space: nowrap;
+}
+
+@media (max-width: 768px) {
+    .danmu-list-tools {
+        flex-wrap: wrap;
+    }
+
+    .preview-search.danmu-search {
+        order: 0;
+        flex: 1 1 100%;
+        width: 100%;
+        max-width: none;
+    }
+
+    .danmu-search-status {
+        order: 1;
+        margin-left: auto;
+    }
+
+    .danmu-export-btns {
+        flex: 1 1 0;
+        min-width: 0;
+        flex-wrap: nowrap;
+    }
+
+    .danmu-export-select {
+        flex: 1 1 160px;
+        max-width: none;
+        min-width: 0;
+    }
+
+    .danmu-export-btns .btn {
+        flex: 0 0 auto;
+        white-space: nowrap;
+    }
+
+    .danmu-result-toolbar .btn-back {
+        flex: 0 0 auto;
+        white-space: nowrap;
+    }
 }
 
 /* ============ 颜色池配置 ============ */
