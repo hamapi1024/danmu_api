@@ -1,6 +1,6 @@
 // language=CSS
 export const themesCssContent = /* css */ `
-/* 设计令牌与 ACG 七色主题 + 独立明暗切换 — 参照 Bangumi-syncer 设计系统 */
+/* 设计令牌与七色主题 + 独立明暗切换 — 参照 Bangumi-syncer 柔和圆角设计风格 */
 
 /* ============ 全局设计令牌 ============ */
 :root {
@@ -40,6 +40,7 @@ body {
     --theme-code-bg: #1a1b24;
     --theme-code-text: #e2e4ea;
     --theme-link: #8cb48c;
+    --theme-check-color: #ffffff;
     color-scheme: light;
     background: var(--theme-page-bg);
     color: var(--theme-text);
@@ -112,6 +113,7 @@ body[data-color-scheme="dark"] {
     --theme-input-bg: rgba(255, 255, 255, 0.07);
     --theme-code-bg: #111118;
     --theme-code-text: #e2e4ea;
+    --theme-check-color: #000000;
     color-scheme: dark;
 }
 
@@ -214,7 +216,6 @@ body[data-theme] .theme-option:focus-visible, body[data-theme] .btn:focus-visibl
 .theme-option-label { font-size: 11px; font-weight: 600; white-space: nowrap; }
 .config-transfer-btn { display: inline-flex; align-items: center; gap: 7px; }
 .env-toolbar-actions .btn { align-items: center; display: inline-flex; justify-content: center; gap: 7px; line-height: 1.2; min-height: 38px; white-space: nowrap; }
-.config-transfer-icon { font-size: 20px; font-weight: 700; line-height: 1; }
 
 /* ============ 自定义滚动条 ============ */
 ::-webkit-scrollbar { width: 8px; height: 8px; }
@@ -233,7 +234,7 @@ body[data-color-scheme="dark"] #bg-danmaku-layer span { opacity: 0.08 !important
     .env-section-header { align-items: stretch !important; }
     .env-section-header > div:first-child { min-width: 0; width: 100%; }
     .env-toolbar-actions { display: grid !important; grid-template-columns: repeat(2, minmax(0, 1fr)); width: 100%; }
-    .env-toolbar-actions .btn { flex: none; min-height: 44px; padding: 10px 8px; width: 100%; }
+    .env-toolbar-actions .btn { flex: none; min-height: 34px; padding: 6px 10px; width: 100%; }
     .theme-settings { align-items: stretch; flex-direction: column; }
     .theme-options { grid-template-columns: repeat(3, minmax(0, 1fr)); }
 }
